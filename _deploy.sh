@@ -8,7 +8,7 @@ set -e
 git config --global user.email "israeldi@umich.edu"
 git config --global user.name "Israel Diego"
 
-git clone -b gh-pages https://${GITHUB_PAT}@github.com/${TRAVIS_REPO_SLUG}.git _book
+git clone -b gh-pages https://${GITHUB_PAT}@github.com/${TRAVIS_REPO_SLUG}.git book-output
 cd book-output
 cp -r ../_book/* ./
 git add --all *
