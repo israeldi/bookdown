@@ -5,24 +5,24 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>A Minimal Book Example</title>
-  <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook.">
+  <title>Projects and Coursework</title>
+  <meta name="description" content="This online ebook contains files to my projects and course work.">
   <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="A Minimal Book Example" />
+  <meta property="og:title" content="Projects and Coursework" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta property="og:description" content="This online ebook contains files to my projects and course work." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="A Minimal Book Example" />
+  <meta name="twitter:title" content="Projects and Coursework" />
   
-  <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta name="twitter:description" content="This online ebook contains files to my projects and course work." />
   
 
-<meta name="author" content="Yihui Xie">
+<meta name="author" content="Israel Diego">
 
 
 <meta name="date" content="2018-12-19">
@@ -130,7 +130,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">A Minimal Book Example</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prerequisites</a></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Personal Info</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#contact"><i class="fa fa-check"></i><b>1.1</b> Contact:</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#about-me"><i class="fa fa-check"></i><b>1.2</b> About me</a></li>
+</ul></li>
 <li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a></li>
 <li class="chapter" data-level="3" data-path="literature.html"><a href="literature.html"><i class="fa fa-check"></i><b>3</b> Literature</a></li>
 <li class="chapter" data-level="4" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>4</b> Methods</a></li>
@@ -152,7 +155,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">A Minimal Book Example</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Projects and Coursework</a>
           </h1>
         </div>
 
@@ -161,20 +164,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="header">
-<h1 class="title">A Minimal Book Example</h1>
-<p class="author"><em>Yihui Xie</em></p>
+<h1 class="title">Projects and Coursework</h1>
+<p class="author"><em>Israel Diego</em></p>
 <p class="date"><em>2018-12-19</em></p>
 </div>
-<div id="prerequisites" class="section level1">
-<h1><span class="header-section-number">Chapter 1</span> Prerequisites</h1>
-<p>This is a <em>sample</em> book written in <strong>Markdown</strong>. You can use anything that Pandoc’s Markdown supports, e.g., a math equation <span class="math inline">\(a^2 + b^2 = c^2\)</span>.</p>
-<p>The <strong>bookdown</strong> package can be installed from CRAN or Github:</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">&quot;bookdown&quot;</span>)
-<span class="co"># or the development version</span>
-<span class="co"># devtools::install_github(&quot;rstudio/bookdown&quot;)</span></code></pre>
-<p>Remember each Rmd file contains one and only one chapter, and a chapter is defined by the first-level heading <code>#</code>.</p>
-<p>To compile this example to PDF, you need XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): <a href="https://yihui.name/tinytex/" class="uri">https://yihui.name/tinytex/</a>.</p>
+<div id="personal-info" class="section level1">
+<h1><span class="header-section-number">Chapter 1</span> Personal Info</h1>
+<div id="contact" class="section level2">
+<h2><span class="header-section-number">1.1</span> Contact:</h2>
+<p>Mail: <a href="mailto:israeldi@umich.edu">israeldi@umich.edu</a></p>
+<p>Tel: (734) 845-8431</p>
+</div>
+<div id="about-me" class="section level2">
+<h2><span class="header-section-number">1.2</span> About me</h2>
+<p>I am a First-Year Masters Student at the University of Michigan studying
+Quantitative Finance and Risk Management. Currently looking for an internship
+for Summer 2019 as a Quantitative Researcher at an Investment Bank or Hedge Fund.</p>
 
+</div>
 </div>
             </section>
 
@@ -227,19 +234,6 @@ gitbook.start({
 });
 </script>
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:" && /^https?:/.test(src))
-      src = src.replace(/^https?:/, '');
-    script.src = src;
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
 </body>
 
 </html>
