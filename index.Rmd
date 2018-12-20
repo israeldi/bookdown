@@ -10,6 +10,7 @@ output:
         facebook: false
         twitter: false
         github: true
+        linkedin: true
 documentclass: book
 bibliography: [book.bib, packages.bib]
 biblio-style: apalike
