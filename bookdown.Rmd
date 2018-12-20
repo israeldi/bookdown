@@ -1,3 +1,35 @@
+--- 
+title: "Projects and Coursework"
+author: "Israel Diego"
+date: "`r Sys.Date()`"
+github-repo: "israeldi"
+cover-image: "_bookdown_files/profile_pic.png"
+site: bookdown::bookdown_site
+output: 
+  bookdown::gitbook:
+    config:
+      sharing:
+        facebook: false
+        twitter: false
+        github: true
+        linkedin: true
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+description: "This online ebook contains files to my projects and course work."
+---
+
+# Personal Info
+
+Placeholder
+
+
+## Contact:
+## About me
+
+<!--chapter:end:index.Rmd-->
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(root.dir = 'Users/israeldiego/Documents/GitHub/506_Project⁩')
 library(data.table)
@@ -296,3 +328,34 @@ process, we have generated random numbers and these numbers cannot be exactly id
 
 ## Reference 
 *Yahoo Finance*
+
+<!--chapter:end:01-MonteCarloTutorial.Rmd-->
+
+# Literature
+
+Here is a review of existing methods.
+
+<!--chapter:end:02-literature.Rmd-->
+
+# Methods
+
+We describe our methods in this chapter.
+
+<!--chapter:end:03-method.Rmd-->
+
+# Applications
+
+Some _significant_ applications are demonstrated in this chapter.
+
+## Example one
+
+## Example two
+
+<!--chapter:end:04-application.Rmd-->
+
+`r if (knitr::is_html_output()) '
+# References {-}
+'`
+
+<!--chapter:end:06-references.Rmd-->
+
