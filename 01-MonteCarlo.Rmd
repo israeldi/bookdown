@@ -1,5 +1,0 @@
-# Monte Carlo
-
-```{r comment=''}
-cat(readLines('README.md'), sep = '\n')
-```

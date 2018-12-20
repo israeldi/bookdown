@@ -1,0 +1,5 @@
+---
+description: "This online ebook contains files to my projects and course work."
+---
+
+# Stats 506
