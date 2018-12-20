@@ -1,5 +1,5 @@
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(root.dir = 'Users/israeldiego/Documents/GitHub/506_Project⁩')
+knitr::opts_chunk$set(echo = TRUE)
 library(data.table)
 library(ggplot2)
 library(reticulate)
