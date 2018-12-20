@@ -1,3 +1,40 @@
+--- 
+title: "Projects and Coursework"
+author: "Israel Diego"
+date: "`r Sys.Date()`"
+github-repo: "israeldi"
+cover-image: "_bookdown_files/profile_pic.png"
+site: bookdown::bookdown_site
+output: 
+  bookdown::gitbook:
+    config:
+      sharing:
+        facebook: false
+        twitter: false
+        github: true
+        linkedin: true
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+description: "This online ebook contains files to my projects and course work."
+---
+# Personal Info
+
+## Contact:
+
+Mail: israeldi@umich.edu
+
+Tel: (734) 845-8431
+
+## About me
+
+I am a First-Year Masters Student at the University of Michigan studying 
+Quantitative Finance and Risk Management. Currently looking for an internship 
+for Summer 2019 as a Quantitative Researcher at an Investment Bank or Hedge Fund.
+
+<!--chapter:end:index.Rmd-->
+
 # Monte Carlo Simulation of Stock Portfolio in R, Matlab, and Python
 
 ```{r setup, include=FALSE}
@@ -298,3 +335,18 @@ process, we have generated random numbers and these numbers cannot be exactly id
 
 ## Reference 
 *Yahoo Finance*  
+
+<!--chapter:end:Stats506/01-Stats506.Rmd-->
+
+# My Readme
+
+This is a minimal example of a book based on R Markdown and **bookdown** (https://github.com/rstudio/bookdown). Please see the page "Get Started" at https://bookdown.org/ for how to compile this example.
+
+<!--chapter:end:README.md-->
+
+# Literature
+
+Here is a review of existing methods.
+
+<!--chapter:end:02-literature.Rmd-->
+

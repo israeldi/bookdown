@@ -1,4 +1,14 @@
-# Monte Carlo Simulation of Stock Portfolio in R, Matlab, and Python
+---
+title: "Monte Carlo Simulation of Stock Portfolio in R, Matlab, and Python"
+author: "Feichen Shen, Israel Diego, Shuoran Li"
+date: "`r format.Date(Sys.Date(), '%B %d, %Y')`"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    theme: journal
+    highlight: pygments
+---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
@@ -297,4 +307,4 @@ Statistics we get using three different languages are slightly different, becaus
 process, we have generated random numbers and these numbers cannot be exactly identical.
 
 ## Reference 
-*Yahoo Finance*  
+*Yahoo Finance*
