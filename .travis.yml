@@ -1,0 +1,16 @@
+# R for travis: see documentation at https://docs.travis-ci.com/user/languages/r
+
+language: r
+pandoc_version: 2.1.1
+sudo: false
+cache: packages
+script:
+  Rscript -e "bookdown::render_book('index.Rmd', 'bookdown::gitbook')"
+  Rscript -e "bookdown::render_book('index.Rmd', 'bookdown::pdf_book')"
+  Rscript -e "bookdown::render_book('index.Rmd', 'bookdown::epub_book')"
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_PAT #set in travis-ci dashboard
+  on:
+    branch: master
