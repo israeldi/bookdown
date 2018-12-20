@@ -2,6 +2,8 @@
 title: "Projects and Coursework"
 author: "Israel Diego"
 date: "`r Sys.Date()`"
+github-repo: "israeldi"
+cover-image: "_bookdown_files/profile_pic.png"
 site: bookdown::bookdown_site
 output: 
   bookdown::gitbook:
