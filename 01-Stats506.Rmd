@@ -1,5 +1,7 @@
----
-description: "This online ebook contains files to my projects and course work."
----
-
 # Stats 506
+
+## Stats 506: Computational Methods and Tools in Statistics
+- [Monte Carlo Tutorial](https://israeldi.github.io/Stats506/finalProject.html)  
+- [HealthCare Common Procedure Trends](https://israeldi.github.io/Stats506/individual_project.html)  
+- [Interview Questions](./Python/python-secret-notebook.ipynb)  
+- [Hackerrank](https://github.com/israeldi/umich-python/blob/master/python-hackerrank-notebook.ipynb)  
