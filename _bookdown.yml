@@ -3,4 +3,8 @@ delete_merged_file: true
 language:
   ui:
     chapter_name: ""
-rmd_files: ["index.Rmd", "01-Stats506.Rmd", "README.md", "02-literature.Rmd"]
+rmd_files:
+- index.Rmd # must include :)
+- Stats506/01-Stats506.Rmd 
+- README.md
+- 02-literature.Rmd
