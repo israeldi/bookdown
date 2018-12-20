@@ -5,8 +5,9 @@ pandoc_version: 2.1.1
 sudo: false
 cache: packages
 script:
-  - Rscript -e 'xfun::in_dir("dir1", bookdown::render_book("index.Rmd", "bookdown::gitbook"))'
-  - Rscript -e 'xfun::in_dir("dir2", bookdown::render_book("index.Rmd", "bookdown::gitbook"))'
+  Rscript -e "bookdown::render_book('index.Rmd', 'bookdown::gitbook')"
+  Rscript -e "bookdown::render_book('index.Rmd', 'bookdown::pdf_book')"
+  Rscript -e "bookdown::render_book('index.Rmd', 'bookdown::epub_book')"
 deploy:
   provider: pages
   edge:
