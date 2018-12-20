@@ -7,6 +7,15 @@ bookdown::gitbook:
       after: |
         <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
     download: ["pdf", "epub"]
+    sharing:
+      facebook: yes
+      twitter: yes
+      google: no
+      linkedin: no
+      weibo: no
+      instapaper: no
+      vk: no
+      all: ['facebook', 'google', 'twitter', 'linkedin', 'weibo', 'instapaper']
 bookdown::pdf_book:
   includes:
     in_header: preamble.tex
