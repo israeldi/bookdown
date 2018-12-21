@@ -44,7 +44,7 @@ tutorial ['Stock Price Data'](https://raw.githubusercontent.com/ShuoranLi/506_Pr
 
 The first ten rows of data look like :
 ```{r R_version_c2, warning=FALSE, message=FALSE,echo=FALSE}
-stock_Data = fread('./Group21_ProjectData.csv')
+stock_Data = fread('./Stats506/Group21_ProjectData.csv')
 stock_Data[1:10, ]
 ```
 ## Languages {.tabset}
@@ -52,7 +52,7 @@ stock_Data[1:10, ]
 ### R
 Firstly, we need to load the data
 ```{r R_version_c1, warning=FALSE, message=FALSE}
-stock_Data = fread('./Group21_ProjectData.csv')
+stock_Data = fread('./Stats506/Group21_ProjectData.csv')
 ```
 Then we extract the stock price and set initial values for Monte-Carlo parameters
 ```{r R_version_c3, warning=FALSE, message=FALSE}
@@ -131,7 +131,7 @@ print(Avg_CI)
 ### Matlab
 Load data and extract stock price 
 ```{r matlab_chunk2, warning=FALSE, message=FALSE, eval=FALSE}
-stockData = readtable('Group21_ProjectData.csv');
+stockData = readtable('./Stats506/Group21_ProjectData.csv');
 stockPrices = table2array(stockData(:, 2:end));
 ```
 Set Monte_Carlo parameters
@@ -184,7 +184,7 @@ xlabel('Days','fontsize',16)
 ylabel('Portfolio Returns','fontsize',16)
 ```
 ```{r matlab_pic1, echo=FALSE}
-knitr::include_graphics('./matlab_pics/ThirtyDay_Returns_Matlab_MC.png')
+knitr::include_graphics('./Stats506/matlab_pics/ThirtyDay_Returns_Matlab_MC.png')
 ```
 Finally, we want to get some useful statistics:
 ```{r matlab_chunk9, warning=FALSE, message=FALSE, eval=FALSE}
@@ -198,7 +198,7 @@ medianPortfolioReturns = median(portfolio30DayReturn_m(end,:) - 1);
 average_CI = quantile(portfolio30DayReturn_m(end,:) - 1, [0.025, 0.975]);
 ```
 ```{r matlab_pic2, echo=FALSE,out.width='400px'}
-knitr::include_graphics('matlab_pics/Matlab_Simulation_Stats.png')
+knitr::include_graphics('./Stats506/matlab_pics/Matlab_Simulation_Stats.png')
 ```
 
 ### Python
@@ -210,7 +210,7 @@ import matplotlib.pyplot as plt
 ```
 Load data and extract stock price 
 ```{r chunk2, warning=FALSE, message=FALSE, eval=FALSE}
-stock_data = pd.read_csv("Group21_ProjectData.csv")
+stock_data = pd.read_csv("./Stats506/Group21_ProjectData.csv")
 stock_price = stock_data.iloc[:,1:4]
 stock_price = stock_price.values
 ```
@@ -258,7 +258,7 @@ plt.title('Simulated Portfolio Returns in 30 days')
 plt.show()
 ```
 ```{r pic1, echo=FALSE}
-knitr::include_graphics('./Python_pics/Portf_returns_py.png')
+knitr::include_graphics('./Stats506/Python_pics/Portf_returns_py.png')
 ```
 Finally, we want to get some useful statistics:
 ```{r chunk9, warning=FALSE, message=FALSE, eval=FALSE}
@@ -271,7 +271,7 @@ print(SD_portf_returns)
 print(Median_portf_returns)
 ```
 ```{r pic2, echo=FALSE,out.width='200px'}
-knitr::include_graphics('./Python_pics/avgsdmedian.png')
+knitr::include_graphics('./Stats506/Python_pics/avgsdmedian.png')
 ```
 ```{r chunk10, warning=FALSE, message=FALSE, eval=FALSE}
 # construct CI for average
@@ -279,7 +279,7 @@ Avg_CI = np.quantile(portf_returns_30_m[29,:]-1,np.array([0.025,0.975]))
 print(Avg_CI)
 ```
 ```{r pic3, echo=FALSE,out.width='200px'}
-knitr::include_graphics('./Python_pics/CI.png')
+knitr::include_graphics('./Stats506/Python_pics/CI.png')
 ```
 
 ## Results

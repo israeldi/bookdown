@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>2 Monte Carlo Simulation of Stock Portfolio in R, Matlab, and Python | Projects and Coursework</title>
+  <meta name="description" content="This online ebook contains files to my projects and course work.">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+
+  <meta property="og:title" content="2 Monte Carlo Simulation of Stock Portfolio in R, Matlab, and Python | Projects and Coursework />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:image" content="_bookdown_files/profile_pic.png" />
+  <meta property="og:description" content="This online ebook contains files to my projects and course work." />
+  <meta name="github-repo" content="israeldi" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="2 Monte Carlo Simulation of Stock Portfolio in R, Matlab, and Python | Projects and Coursework />
+  
+  <meta name="twitter:description" content="This online ebook contains files to my projects and course work." />
+  <meta name="twitter:image" content="_bookdown_files/profile_pic.png" />
+
+<meta name="author" content="Israel Diego">
+
+
+<meta name="date" content="2018-12-20">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="index.html">
+<link rel="next" href="my-readme.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Projects and Coursework</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Personal Info</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#contact"><i class="fa fa-check"></i><b>1.1</b> Contact:</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#about-me"><i class="fa fa-check"></i><b>1.2</b> About me</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="monte-carlo-simulation-of-stock-portfolio-in-r-matlab-and-python.html"><a href="monte-carlo-simulation-of-stock-portfolio-in-r-matlab-and-python.html"><i class="fa fa-check"></i><b>2</b> Monte Carlo Simulation of Stock Portfolio in R, Matlab, and Python</a><ul>
+<li class="chapter" data-level="2.1" data-path="monte-carlo-simulation-of-stock-portfolio-in-r-matlab-and-python.html"><a href="monte-carlo-simulation-of-stock-portfolio-in-r-matlab-and-python.html#monte-carlo-introduction"><i class="fa fa-check"></i><b>2.1</b> Monte Carlo Introduction</a></li>
+<li class="chapter" data-level="2.2" data-path="monte-carlo-simulation-of-stock-portfolio-in-r-matlab-and-python.html"><a href="monte-carlo-simulation-of-stock-portfolio-in-r-matlab-and-python.html#dataset-summary"><i class="fa fa-check"></i><b>2.2</b> Dataset Summary</a></li>
+<li class="chapter" data-level="2.3" data-path="monte-carlo-simulation-of-stock-portfolio-in-r-matlab-and-python.html"><a href="monte-carlo-simulation-of-stock-portfolio-in-r-matlab-and-python.html#languages"><i class="fa fa-check"></i><b>2.3</b> Languages</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="monte-carlo-simulation-of-stock-portfolio-in-r-matlab-and-python.html"><a href="monte-carlo-simulation-of-stock-portfolio-in-r-matlab-and-python.html#r"><i class="fa fa-check"></i><b>2.3.1</b> R</a></li>
+<li class="chapter" data-level="2.3.2" data-path="monte-carlo-simulation-of-stock-portfolio-in-r-matlab-and-python.html"><a href="monte-carlo-simulation-of-stock-portfolio-in-r-matlab-and-python.html#matlab"><i class="fa fa-check"></i><b>2.3.2</b> Matlab</a></li>
+<li class="chapter" data-level="2.3.3" data-path="monte-carlo-simulation-of-stock-portfolio-in-r-matlab-and-python.html"><a href="monte-carlo-simulation-of-stock-portfolio-in-r-matlab-and-python.html#python"><i class="fa fa-check"></i><b>2.3.3</b> Python</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="monte-carlo-simulation-of-stock-portfolio-in-r-matlab-and-python.html"><a href="monte-carlo-simulation-of-stock-portfolio-in-r-matlab-and-python.html#results"><i class="fa fa-check"></i><b>2.4</b> Results</a></li>
+<li class="chapter" data-level="2.5" data-path="monte-carlo-simulation-of-stock-portfolio-in-r-matlab-and-python.html"><a href="monte-carlo-simulation-of-stock-portfolio-in-r-matlab-and-python.html#note"><i class="fa fa-check"></i><b>2.5</b> Note</a></li>
+<li class="chapter" data-level="2.6" data-path="monte-carlo-simulation-of-stock-portfolio-in-r-matlab-and-python.html"><a href="monte-carlo-simulation-of-stock-portfolio-in-r-matlab-and-python.html#reference"><i class="fa fa-check"></i><b>2.6</b> Reference</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="my-readme.html"><a href="my-readme.html"><i class="fa fa-check"></i><b>3</b> My Readme</a></li>
+<li class="chapter" data-level="4" data-path="literature.html"><a href="literature.html"><i class="fa fa-check"></i><b>4</b> Literature</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Projects and Coursework</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="monte-carlo-simulation-of-stock-portfolio-in-r-matlab-and-python" class="section level1">
+<h1><span class="header-section-number">2</span> Monte Carlo Simulation of Stock Portfolio in R, Matlab, and Python</h1>
+<div id="monte-carlo-introduction" class="section level2">
+<h2><span class="header-section-number">2.1</span> Monte Carlo Introduction</h2>
+<p>The purpose of this tutorial is to demonstrate Monte Carlo Simulation in Matlab,
+R, and Python. We conduct our Monte Carlo study in the context of simulating
+daily returns for an investment portfolio.</p>
+<p>For simplicity we will only consider three assets: Apple, Google, and Facebook.
+We will assume an Initial Investment of $100,000 and allocate our money evenly
+between the three stocks. In this case the portfolio weights <span class="math inline">\(w_i = 1/3\)</span> for
+<span class="math inline">\(i = 1,2,3\)</span>.</p>
+<p>Next, we assume that daily returns are distributed Multivariate Normal with mean
+vector <span class="math inline">\(\mu\)</span> and covariance matrix <span class="math inline">\(\Sigma\)</span>. In other words,
+<span class="math display">\[R_t \sim MVN(\mu, \Sigma)\]</span> for <span class="math inline">\(t \in \{1,\dots,T\}\)</span> where <span class="math inline">\(T\)</span> is the final
+time horizon.</p>
+<p>We will use the Cholesky Factorization in order to find Lower Triangular Matrix
+<span class="math inline">\(L\)</span> such that <span class="math inline">\(LL&#39; = \Sigma\)</span>. Then our returns can be generated by
+<span class="math display">\[ R_t = \mu + LZ_t \]</span> where <span class="math display">\[Z_t \sim N(0,I)\]</span> for <span class="math inline">\(t \in \{1,\dots,T\}\)</span>.</p>
+<p>The returns will be simulated over a 30-day period, where our 30-day returns
+can be formulated as, <span class="math display">\[\hat R_{30} = \prod_{t=1}^{30} (1+R_t)\]</span></p>
+<p>Thus our portfolio returns for each Monte Carlo trial <span class="math inline">\(m\)</span> become the inner
+product between the 30-day returns and our vector of portfolio weights <span class="math inline">\(w\)</span>,
+<span class="math display">\[P_m = w \cdot \hat R_{30} \]</span>.</p>
+</div>
+<div id="dataset-summary" class="section level2">
+<h2><span class="header-section-number">2.2</span> Dataset Summary</h2>
+<p>We use adjusted-close stock prices for Apple, Google, and Facebook from November 14th, 2017 - November 14th, 2018. Historical stock price data can be found on Yahoo
+Finance for these companies. Also here is the link to the data set for this
+tutorial <a href="https://raw.githubusercontent.com/ShuoranLi/506_Project/master/Group21_ProjectData.csv">‘Stock Price Data’</a>.</p>
+<p>The first ten rows of data look like :</p>
+<pre><code>##         Date AAPL_Adj_Close GOOG_Adj_Close FB_Adj_Close
+##  1: 11/15/17       166.5791        1020.91       177.95
+##  2: 11/16/17       168.5693        1032.50       179.59
+##  3: 11/17/17       167.6333        1019.09       179.00
+##  4: 11/20/17       167.4658        1018.38       178.74
+##  5: 11/21/17       170.5791        1034.49       181.86
+##  6: 11/22/17       172.3721        1035.96       180.87
+##  7: 11/24/17       172.3820        1040.61       182.78
+##  8: 11/27/17       171.5150        1054.21       183.03
+##  9: 11/28/17       170.5101        1047.41       182.42
+## 10: 11/29/17       166.9732        1021.66       175.13</code></pre>
+</div>
+<div id="languages" class="section level2 tabset">
+<h2><span class="header-section-number">2.3</span> Languages</h2>
+<div id="r" class="section level3">
+<h3><span class="header-section-number">2.3.1</span> R</h3>
+<p>Firstly, we need to load the data</p>
+<pre class="sourceCode r"><code class="sourceCode r">stock_Data =<span class="st"> </span><span class="kw">fread</span>(<span class="st">&#39;./Stats506/Group21_ProjectData.csv&#39;</span>)</code></pre>
+<p>Then we extract the stock price and set initial values for Monte-Carlo parameters</p>
+<pre class="sourceCode r"><code class="sourceCode r">stock_Price =<span class="st"> </span><span class="kw">as.matrix</span>( stock_Data[ , <span class="dv">2</span><span class="op">:</span><span class="dv">4</span>] )
+
+mc_rep =<span class="st"> </span><span class="dv">1000</span> <span class="co"># Number of Monte Carlo Simulations</span>
+training_days =<span class="st"> </span><span class="dv">30</span> </code></pre>
+<p>Get the returns by stock price and set the investment weights</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># This function returns the first differences of a t x q matrix of data</span>
+returns =<span class="st"> </span><span class="cf">function</span>(Y){
+  len =<span class="st"> </span><span class="kw">nrow</span>(Y)
+  yDif =<span class="st"> </span>Y[<span class="dv">2</span><span class="op">:</span>len, ] <span class="op">/</span><span class="st"> </span>Y[<span class="dv">1</span><span class="op">:</span>len<span class="dv">-1</span>, ] <span class="op">-</span><span class="st"> </span><span class="dv">1</span>
+}
+
+<span class="co"># Get the Stock Returns</span>
+stock_Returns =<span class="st"> </span><span class="kw">returns</span>(stock_Price)
+
+<span class="co"># Suppose we invest our money evenly among all three assets </span>
+<span class="co"># We use today&#39;s Price 11/14/2018 to find the number of shares each stock </span>
+<span class="co"># that we buy</span>
+portfolio_Weights =<span class="st"> </span><span class="kw">t</span>(<span class="kw">as.matrix</span>(<span class="kw">rep</span>(<span class="dv">1</span><span class="op">/</span><span class="kw">ncol</span>(stock_Returns), <span class="kw">ncol</span>(stock_Returns))))
+<span class="kw">print</span>(portfolio_Weights)</code></pre>
+<pre><code>##           [,1]      [,2]      [,3]
+## [1,] 0.3333333 0.3333333 0.3333333</code></pre>
+<p>Calculate the Covariance matrix and Mean value of Stock Returns</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Get the Variance Covariance Matrix of Stock Returns</span>
+coVarMat =<span class="st"> </span><span class="kw">cov</span>(stock_Returns)
+miu =<span class="st"> </span><span class="kw">colMeans</span>(stock_Returns)
+<span class="co"># Extend the vector to a matrix</span>
+Miu =<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">rep</span>(miu, training_days), <span class="dt">nrow =</span> <span class="dv">3</span>)</code></pre>
+<p>Use Monte-Carlo to simulate the 30-day Portfolio Returns</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Initializing simulated 30 day portfolio returns</span>
+portfolio_Returns_<span class="dv">30</span>_m =<span class="st"> </span><span class="kw">matrix</span>(<span class="dv">0</span>, training_days, mc_rep)
+
+<span class="kw">set.seed</span>(<span class="dv">200</span>)
+<span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>mc_rep) {
+  Z =<span class="st"> </span><span class="kw">matrix</span> ( <span class="kw">rnorm</span>( <span class="kw">dim</span>(stock_Returns)[<span class="dv">2</span>] <span class="op">*</span><span class="st"> </span>training_days ), <span class="dt">ncol =</span> training_days )
+  <span class="co"># Lower Triangular Matrix from our Choleski Factorization</span>
+  L =<span class="st"> </span><span class="kw">t</span>( <span class="kw">chol</span>(coVarMat) )
+  <span class="co"># Calculate stock returns for each day</span>
+  daily_Returns =<span class="st"> </span>Miu <span class="op">+</span><span class="st"> </span>L <span class="op">%*%</span><span class="st"> </span>Z  
+  <span class="co"># Calculate portfolio returns for 30 days</span>
+  portfolio_Returns_<span class="dv">30</span> =<span class="st"> </span><span class="kw">cumprod</span>( portfolio_Weights <span class="op">%*%</span><span class="st"> </span>daily_Returns <span class="op">+</span><span class="st"> </span><span class="dv">1</span> )
+  <span class="co"># Add it to the monte-carlo matrix</span>
+  portfolio_Returns_<span class="dv">30</span>_m[,i] =<span class="st"> </span>portfolio_Returns_<span class="dv">30</span>;
+}</code></pre>
+<p>Visualising the result ( Simulated Portfolio Returns in 30 days)</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Visualising result</span>
+x_axis =<span class="st"> </span><span class="kw">rep</span>(<span class="dv">1</span><span class="op">:</span>training_days, mc_rep)
+y_axis =<span class="st"> </span><span class="kw">as.vector</span>(portfolio_Returns_<span class="dv">30</span>_m<span class="dv">-1</span>)
+plot_data =<span class="st"> </span><span class="kw">data.frame</span>(x_axis, y_axis)
+<span class="kw">ggplot</span>(<span class="dt">data =</span> plot_data, <span class="kw">aes</span>(<span class="dt">x =</span> x_axis, <span class="dt">y =</span> y_axis)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_path</span>(<span class="dt">col =</span> <span class="st">&#39;red&#39;</span>, <span class="dt">size =</span> <span class="fl">0.1</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">xlab</span>(<span class="st">&#39;Days&#39;</span>) <span class="op">+</span><span class="st"> </span><span class="kw">ylab</span>(<span class="st">&#39;Portfolio Returns&#39;</span>) <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&#39;Simulated Portfolio Returns in 30 days&#39;</span>)<span class="op">+</span>
+<span class="st">  </span><span class="kw">theme_bw</span>() <span class="op">+</span>
+<span class="st">  </span><span class="kw">theme</span>(<span class="dt">plot.title =</span> <span class="kw">element_text</span>(<span class="dt">hjust =</span> <span class="fl">0.5</span>))</code></pre>
+<p><img src="bookdown_files/figure-html/R_version_c7-1.png" width="672" /></p>
+<p>Get some useful statistics through the results we get</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Porfolio Returns statistics on the 30th day.</span>
+Avg_Portfolio_Returns =<span class="st"> </span><span class="kw">mean</span>(portfolio_Returns_<span class="dv">30</span>_m[<span class="dv">30</span>,]<span class="op">-</span><span class="dv">1</span>)
+SD_Portfolio_Returns =<span class="st"> </span><span class="kw">sd</span>(portfolio_Returns_<span class="dv">30</span>_m[<span class="dv">30</span>,]<span class="op">-</span><span class="dv">1</span>)
+Median_Portfolio_Returns =<span class="st"> </span><span class="kw">median</span>(portfolio_Returns_<span class="dv">30</span>_m[<span class="dv">30</span>,]<span class="op">-</span><span class="dv">1</span>)
+<span class="kw">print</span>(<span class="kw">c</span>(Avg_Portfolio_Returns,SD_Portfolio_Returns,Median_Portfolio_Returns))</code></pre>
+<pre><code>## [1]  0.0009402469  0.0840585273 -0.0015423606</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Construct a 95% Confidential Interval for average returns</span>
+Avg_CI =<span class="st"> </span><span class="kw">quantile</span>(portfolio_Returns_<span class="dv">30</span>_m[<span class="dv">30</span>,]<span class="op">-</span><span class="dv">1</span>, <span class="kw">c</span>(<span class="fl">0.025</span>, <span class="fl">0.975</span>))
+<span class="kw">print</span>(Avg_CI)</code></pre>
+<pre><code>##       2.5%      97.5% 
+## -0.1541318  0.1702711</code></pre>
+</div>
+<div id="matlab" class="section level3">
+<h3><span class="header-section-number">2.3.2</span> Matlab</h3>
+<p>Load data and extract stock price</p>
+<pre class="sourceCode r"><code class="sourceCode r">stockData =<span class="st"> </span><span class="kw">readtable</span>(<span class="st">&#39;./Stats506/Group21_ProjectData.csv&#39;</span>);
+stockPrices =<span class="st"> </span><span class="kw">table2array</span>(<span class="kw">stockData</span>(<span class="op">:</span>, <span class="dv">2</span><span class="op">:</span>end));</code></pre>
+<p>Set Monte_Carlo parameters</p>
+<pre class="sourceCode r"><code class="sourceCode r">mc_rep =<span class="st"> </span><span class="dv">1000</span>;
+initInvestment =<span class="st"> </span><span class="dv">100000</span>;
+numTradingDays =<span class="st"> </span><span class="dv">30</span></code></pre>
+<p>Calculate stock returns</p>
+<pre class="sourceCode r"><code class="sourceCode r">stock_returns =<span class="st"> </span><span class="kw">stock_price</span>(<span class="dv">2</span><span class="op">:</span>end, <span class="op">:</span>) .<span class="op">/</span><span class="st"> </span><span class="kw">stock_price</span>(<span class="dv">1</span><span class="op">:</span>end<span class="dv">-1</span>, <span class="op">:</span>) <span class="op">-</span><span class="st"> </span><span class="dv">1</span>;</code></pre>
+<p>Set portfolio weight</p>
+<pre class="sourceCode r"><code class="sourceCode r">portfolioWeights =<span class="st"> </span>(<span class="dv">1</span><span class="op">/</span><span class="dv">3</span>) <span class="op">*</span><span class="st"> </span><span class="kw">ones</span>(<span class="dv">1</span>, <span class="kw">size</span>(stockPrices,<span class="dv">2</span>));</code></pre>
+<p>Calculate covariance matrix and mean of the stock returns</p>
+<pre class="sourceCode r"><code class="sourceCode r">% Get the Variance Covariance Matrix of our Stock Returns
+coVarMat =<span class="st"> </span><span class="kw">cov</span>(stockReturns);
+
+% Average returns of each asset 
+mu =<span class="st"> </span><span class="kw">transpose</span>(<span class="kw">mean</span>(stockReturns));
+mu =<span class="st"> </span><span class="kw">repmat</span>(mu, <span class="dv">1</span>, numTradingDays);</code></pre>
+<p>Then we use Monte-Carlo to simulate the portfolio returns in 30 days</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="cf">for</span> i =<span class="st"> </span><span class="dv">1</span><span class="op">:</span>mc_rep
+    % <span class="st">&#39;Randomly generated numbers from N(0,1) distribution&#39;</span>
+    Z =<span class="st"> </span><span class="kw">randn</span>(<span class="kw">size</span>(stockReturns,<span class="dv">2</span>), numTradingDays);
+
+    % <span class="st">&#39;Lower Triangular Matrix from Choleski Factorization&#39;</span>
+    L =<span class="st"> </span><span class="kw">chol</span>(coVarMat, <span class="st">&#39;lower&#39;</span>);
+
+    % <span class="st">&#39;Calculate daily returns for 30 days&#39;</span>
+    dailyReturns =<span class="st"> </span>mu <span class="op">+</span><span class="st"> </span>(L <span class="op">*</span><span class="st"> </span>Z);
+
+    % <span class="st">&#39;Portfolio Returns&#39;</span>
+    thirtyDayReturn =<span class="st"> </span><span class="kw">transpose</span>(<span class="kw">cumprod</span>(portfolioWeights <span class="op">*</span><span class="st"> </span>dailyReturns <span class="op">+</span><span class="st"> </span><span class="dv">1</span>));
+    
+    % <span class="st">&#39;Add return to the set of all 30-day portfolio returns&#39;</span>
+    <span class="kw">portfolio30DayReturn_m</span>(<span class="op">:</span>,i) =<span class="st"> </span>thirtyDayReturn;
+end</code></pre>
+<p>Visualizing the result</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(portfolio30DayReturn_m <span class="op">-</span><span class="st"> </span><span class="dv">1</span>, <span class="st">&#39;LineWidth&#39;</span>, <span class="fl">0.5</span>, <span class="st">&#39;Color&#39;</span>, [<span class="dv">0</span>,<span class="fl">0.7</span>,<span class="fl">0.9</span>, <span class="fl">0.2</span>])
+<span class="kw">title</span>(<span class="st">&#39;Simulated Portfolio Returns in 30 days&#39;</span>, <span class="st">&#39;fontsize&#39;</span>, <span class="dv">16</span>)
+<span class="kw">xlabel</span>(<span class="st">&#39;Days&#39;</span>,<span class="st">&#39;fontsize&#39;</span>,<span class="dv">16</span>)
+<span class="kw">ylabel</span>(<span class="st">&#39;Portfolio Returns&#39;</span>,<span class="st">&#39;fontsize&#39;</span>,<span class="dv">16</span>)</code></pre>
+<p><img src="Stats506/matlab_pics/ThirtyDay_Returns_Matlab_MC.png" /><!-- -->
+Finally, we want to get some useful statistics:</p>
+<pre class="sourceCode r"><code class="sourceCode r">% Calculate some statistics <span class="cf">for</span> our simulated portfolio returns
+averagePortfolioReturns =<span class="st"> </span><span class="kw">mean</span>(<span class="kw">portfolio30DayReturn_m</span>(end,<span class="op">:</span>) <span class="op">-</span><span class="st"> </span><span class="dv">1</span>);
+stdDevPortfolioReturns =<span class="st"> </span><span class="kw">std</span>(<span class="kw">portfolio30DayReturn_m</span>(end,<span class="op">:</span>) <span class="op">-</span><span class="st"> </span><span class="dv">1</span>);
+medianPortfolioReturns =<span class="st"> </span><span class="kw">median</span>(<span class="kw">portfolio30DayReturn_m</span>(end,<span class="op">:</span>) <span class="op">-</span><span class="st"> </span><span class="dv">1</span>);
+
+<span class="op">% Construct a 95%</span><span class="st"> </span>Confidential Interval <span class="cf">for</span> average returns
+
+average_CI =<span class="st"> </span><span class="kw">quantile</span>(<span class="kw">portfolio30DayReturn_m</span>(end,<span class="op">:</span>) <span class="op">-</span><span class="st"> </span><span class="dv">1</span>, [<span class="fl">0.025</span>, <span class="fl">0.975</span>]);</code></pre>
+<p><img src="Stats506/matlab_pics/Matlab_Simulation_Stats.png" width="400px" /></p>
+</div>
+<div id="python" class="section level3">
+<h3><span class="header-section-number">2.3.3</span> Python</h3>
+<p>Load modules</p>
+<pre class="sourceCode r"><code class="sourceCode r">import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt</code></pre>
+<p>Load data and extract stock price</p>
+<pre class="sourceCode r"><code class="sourceCode r">stock_data =<span class="st"> </span><span class="kw">pd.read_csv</span>(<span class="st">&quot;./Stats506/Group21_ProjectData.csv&quot;</span>)
+stock_price =<span class="st"> </span>stock_data.iloc[<span class="op">:</span>,<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>]
+stock_price =<span class="st"> </span>stock_price.values</code></pre>
+<p>Set Monte_Carlo parameters</p>
+<pre class="sourceCode r"><code class="sourceCode r">mc_rep =<span class="st"> </span><span class="dv">1000</span>
+train_days =<span class="st"> </span><span class="dv">30</span></code></pre>
+<p>Calculate stock returns</p>
+<pre class="sourceCode r"><code class="sourceCode r">nrows =<span class="st"> </span><span class="kw">len</span>(stock_price)
+stock_returns =<span class="st"> </span>stock_price[<span class="dv">1</span><span class="op">:</span>nrows,<span class="op">:</span>] <span class="op">/</span><span class="st"> </span>stock_price[<span class="dv">0</span><span class="op">:</span>nrows<span class="dv">-1</span>,<span class="op">:</span>] <span class="op">-</span><span class="st"> </span><span class="dv">1</span></code></pre>
+<p>Set portfolio weight</p>
+<pre class="sourceCode r"><code class="sourceCode r">portf_WT =<span class="st"> </span><span class="kw">np.array</span>([<span class="dv">1</span><span class="op">/</span><span class="dv">3</span>, <span class="dv">1</span><span class="op">/</span><span class="dv">3</span>, <span class="dv">1</span><span class="op">/</span><span class="dv">3</span>])</code></pre>
+<p>Calculate covariance matrix and mean of the stock returns</p>
+<pre class="sourceCode r"><code class="sourceCode r">cov =<span class="st"> </span><span class="kw">np.cov</span>(<span class="kw">np.transpose</span>(stock_returns))
+miu =<span class="st"> </span><span class="kw">np.mean</span>(stock_returns, <span class="dt">axis=</span><span class="dv">0</span>)
+Miu =<span class="st"> </span><span class="kw">np.full</span>((train_days,<span class="dv">3</span>),miu)
+Miu =<span class="st"> </span><span class="kw">np.transpose</span>(Miu)</code></pre>
+<p>Then we use Monte-Carlo to simulate the portfolio returns in 30 days</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># initial matrix</span>
+portf_returns_<span class="dv">30</span>_m =<span class="st"> </span><span class="kw">np.full</span>((train_days,mc_rep),<span class="fl">0.</span>)
+
+<span class="kw">np.random.seed</span>(<span class="dv">100</span>)
+<span class="cf">for</span> i <span class="cf">in</span> <span class="kw">range</span>(<span class="dv">0</span>,mc_rep)<span class="op">:</span>
+<span class="st">    </span>Z =<span class="st"> </span><span class="kw">np.random.normal</span>(<span class="dt">size=</span><span class="dv">3</span><span class="op">*</span>train_days)
+    Z =<span class="st"> </span><span class="kw">Z.reshape</span>((<span class="dv">3</span>,train_days))
+    L =<span class="st"> </span><span class="kw">np.linalg.cholesky</span>(cov)
+    daily_returns =<span class="st"> </span>Miu <span class="op">+</span><span class="st"> </span><span class="kw">np.inner</span>(L,<span class="kw">np.transpose</span>(Z))
+    portf_Returns_<span class="dv">30</span> =<span class="st"> </span><span class="kw">np.cumprod</span>(<span class="kw">np.inner</span>(portf_WT,<span class="kw">np.transpose</span>(daily_returns)) <span class="op">+</span><span class="st"> </span><span class="dv">1</span>)
+    portf_returns_<span class="dv">30</span>_m[<span class="op">:</span>,i] =<span class="st"> </span>portf_Returns_<span class="dv">30</span></code></pre>
+<p>Visualizing the result</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plt.plot</span>(portf_returns_<span class="dv">30</span>_m)
+<span class="kw">plt.ylabel</span>(<span class="st">&#39;Portfolio Returns&#39;</span>)
+<span class="kw">plt.xlabel</span>(<span class="st">&#39;Days&#39;</span>)
+<span class="kw">plt.title</span>(<span class="st">&#39;Simulated Portfolio Returns in 30 days&#39;</span>)
+<span class="kw">plt.show</span>()</code></pre>
+<p><img src="Stats506/python_pics/Portf_returns_py.png" /><!-- -->
+Finally, we want to get some useful statistics:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Porfolio Returns statistics on the 30th day</span>
+Avg_portf_returns =<span class="st"> </span><span class="kw">np.mean</span>(portf_returns_<span class="dv">30</span>_m[<span class="dv">29</span>,<span class="op">:</span>]<span class="op">-</span><span class="dv">1</span>)
+SD_portf_returns =<span class="st"> </span><span class="kw">np.std</span>(portf_returns_<span class="dv">30</span>_m[<span class="dv">29</span>,<span class="op">:</span>]<span class="op">-</span><span class="dv">1</span>)
+Median_portf_returns =<span class="st"> </span><span class="kw">np.median</span>(portf_returns_<span class="dv">30</span>_m[<span class="dv">29</span>,<span class="op">:</span>]<span class="op">-</span><span class="dv">1</span>)
+<span class="kw">print</span>(Avg_portf_returns)
+<span class="kw">print</span>(SD_portf_returns)
+<span class="kw">print</span>(Median_portf_returns)</code></pre>
+<p><img src="Stats506/python_pics/avgsdmedian.png" width="200px" /></p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># construct CI for average</span>
+Avg_CI =<span class="st"> </span><span class="kw">np.quantile</span>(portf_returns_<span class="dv">30</span>_m[<span class="dv">29</span>,<span class="op">:</span>]<span class="op">-</span><span class="dv">1</span>,<span class="kw">np.array</span>([<span class="fl">0.025</span>,<span class="fl">0.975</span>]))
+<span class="kw">print</span>(Avg_CI)</code></pre>
+<p><img src="Stats506/python_pics/CI.png" width="200px" /></p>
+</div>
+</div>
+<div id="results" class="section level2">
+<h2><span class="header-section-number">2.4</span> Results</h2>
+<p>For our particular example, the portfolio returns averaged over all monte carlo
+trials had an average close to 0. The reason the average is close to 0 is
+because Apple, Facebook, and Google have average returns close to 0 over the past year.
+Therefore, our simulated returns essentially had no drift. Also, assuming a
+normal distribution of the returns would not work well in practice since
+stock returns are typically fat-tailed and not normally distributed. However, based on our
+Monte Carlo Study, we do not suggest investing in this portfolio based on the
+low expected portfolio returns.</p>
+</div>
+<div id="note" class="section level2">
+<h2><span class="header-section-number">2.5</span> Note</h2>
+<p>Statistics we get using three different languages are slightly different, because in our simulation
+process, we have generated random numbers and these numbers cannot be exactly identical.</p>
+</div>
+<div id="reference" class="section level2">
+<h2><span class="header-section-number">2.6</span> Reference</h2>
+<p><em>Yahoo Finance</em></p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="my-readme.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": false,
+"google": false,
+"linkedin": true,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["bookdown.pdf", "bookdown.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
